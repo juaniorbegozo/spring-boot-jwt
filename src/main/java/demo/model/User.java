@@ -22,9 +22,7 @@ public class User {
   @Column(unique = true, nullable = false)
   private String username;
 
-  @Column(unique = true, nullable = false)
-  private String email;
-
+  
   @Size(min = 8, message = "Minimum password length: 8 characters")
   private String password;
 
@@ -47,13 +45,6 @@ public class User {
     this.username = username;
   }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
 
   public String getPassword() {
     return password;

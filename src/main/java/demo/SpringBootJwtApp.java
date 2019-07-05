@@ -34,7 +34,6 @@ public class SpringBootJwtApp implements CommandLineRunner {
     User admin = new User();
     admin.setUsername("Savy Admin");
     admin.setPassword("S3cuR3 P4ssW0rD");
-    admin.setEmail("admin@email.com");
     admin.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_ADMIN)));
 
     userService.signup(admin);
@@ -42,7 +41,6 @@ public class SpringBootJwtApp implements CommandLineRunner {
     User client = new User();
     client.setUsername("Best Candidate");
     client.setPassword("Team Player");
-    client.setEmail("client@email.com");
     client.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_CLIENT)));
 
     userService.signup(client);

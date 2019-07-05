@@ -2,8 +2,6 @@ package demo.service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -51,20 +49,9 @@ public class UserService {
     }
   }
 
-  public void delete(String username) {
-    userRepository.deleteByUsername(username);
-  }
-
   public List<User> search() {
     return userRepository.findAll();
   }
 
-  public User whoami(HttpServletRequest req) {
-    return userRepository.findByUsername(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
-  }
-
-  public String refresh(String username) {
-    return jwtTokenProvider.createToken(username, userRepository.findByUsername(username).getRoles());
-  }
 
 }
