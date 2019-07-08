@@ -30,14 +30,13 @@ public class UserController {
     return userService.signin(user.getUsername(), user.getPassword());
   }
 
-  @GetMapping("/all")
+  @GetMapping("/list")
   @PreAuthorize("hasRole('ROLE_ADMIN')")
   public List<UserResponseDTO> search() {
     return modelMapper.map(userService.search(), List.class);
   }
   
-  @GetMapping("/info")
-  @PreAuthorize("hasRole('ROLE_CLIENT')")
+  @GetMapping("/greeting")
   public String info() {
     return "Hello!";
   }

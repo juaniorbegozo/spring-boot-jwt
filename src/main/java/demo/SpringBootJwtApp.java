@@ -41,7 +41,7 @@ public class SpringBootJwtApp implements CommandLineRunner {
     User client = new User();
     client.setUsername("Best Candidate");
     client.setPassword("Team Player");
-    client.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_CLIENT)));
+    client.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_USER)));
 
     userService.signup(client);
   }
